@@ -23,6 +23,7 @@ let upgrade4 = {
     qty: 0,
 }
 
+
 function mine(){
     currentClickCount += totalmultiplier
     document.getElementById('clicks').innerText = `Current clicks are ${currentClickCount}`
@@ -113,3 +114,10 @@ function update4(){
     document.getElementById('idle-tally').innerText = `Total idle power is ${totalIdlePower}`
 }
 
+function easteregg(){
+currentClickCount += 9823479237424
+updateunknown()
+}
+function updateunknown(){
+    document.getElementById('clicks').innerText = `Current clicks are ${currentClickCount}`
+}
