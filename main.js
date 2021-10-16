@@ -115,7 +115,7 @@ function update4(){
 }
 
 function easteregg(){
-currentClickCount += 9823479237424
+currentClickCount += 98237676
 updateunknown()
 }
 function updateunknown(){
