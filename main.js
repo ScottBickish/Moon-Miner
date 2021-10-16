@@ -1,5 +1,6 @@
-let currentClickCount = 40000
+let currentClickCount = 0
 let totalmultiplier = 1
+let totalIdlePower = 0
 
 let upgrade1 = {
     price: 50,
@@ -67,18 +68,23 @@ function click3(){
         currentClickCount -= upgrade3.price
          upgrade3.qty++
          upgrade3.price += upgrade3.price
+         totalIdlePower += upgrade3.multiplier
          }
+        if(currentClickCount >= upgrade3.price){
+         update3()
     setInterval(() => {
          currentClickCount += upgrade3.multiplier;
           update3()
     }, 3000);
-    
+       
+        } 
 }
 function update3(){
     document.getElementById('upgrade3').innerText = `Idle rookie is ${upgrade3.qty}`
     document.getElementById('c3-price').innerText = `Cost: ${upgrade3.price}`
     document.getElementById('click-tally').innerText = `Total click power is ${totalmultiplier}`
     document.getElementById('clicks').innerText = `Current clicks are ${currentClickCount}`
+    document.getElementById('idle-tally').innerText = `Total idle power is ${totalIdlePower}`
 }
 
 function click4(){
@@ -86,17 +92,20 @@ function click4(){
         currentClickCount -= upgrade4.price
          upgrade4.qty++
          upgrade4.price += upgrade4.price
-         }
+         totalIdlePower += upgrade4.multiplier
+         update4()
     setInterval(() => {
          currentClickCount += upgrade4.multiplier;
           update4()
     }, 3000);
     
+         }
 }
 function update4(){
     document.getElementById('upgrade4').innerText = `Idle boss is ${upgrade4.qty}`
     document.getElementById('c4-price').innerText = `Cost: ${upgrade4.price}`
     document.getElementById('click-tally').innerText = `Total click power is ${totalmultiplier}`
     document.getElementById('clicks').innerText = `Current clicks are ${currentClickCount}`
+    document.getElementById('idle-tally').innerText = `Total idle power is ${totalIdlePower}`
 }
 
