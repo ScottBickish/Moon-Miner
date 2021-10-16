@@ -6,3 +6,10 @@ img{
 body{
     background-color: silver;
 }
+button:hover{
+    color: cyan;
+    border: 2px dotted pink;
+}
+img:hover{
+    border: 4px dotted cyan;
+}

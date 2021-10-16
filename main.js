@@ -69,15 +69,17 @@ function click3(){
          upgrade3.qty++
          upgrade3.price += upgrade3.price
          totalIdlePower += upgrade3.multiplier
-         }
-        if(currentClickCount >= upgrade3.price){
-         update3()
-    setInterval(() => {
+        
+       update3()
+             setInterval(() => {
          currentClickCount += upgrade3.multiplier;
           update3()
     }, 3000);
-       
-        } 
+        
+          }
+          
+    
+        
 }
 function update3(){
     document.getElementById('upgrade3').innerText = `Idle rookie is ${upgrade3.qty}`
@@ -93,13 +95,15 @@ function click4(){
          upgrade4.qty++
          upgrade4.price += upgrade4.price
          totalIdlePower += upgrade4.multiplier
+         
          update4()
-    setInterval(() => {
-         currentClickCount += upgrade4.multiplier;
-          update4()
-    }, 3000);
-    
-         }
+             setInterval(() => {
+                  currentClickCount += upgrade4.multiplier;
+                   update4()
+             }, 3000);
+         
+    }
+         
 }
 function update4(){
     document.getElementById('upgrade4').innerText = `Idle boss is ${upgrade4.qty}`
