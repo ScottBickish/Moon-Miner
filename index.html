@@ -28,11 +28,12 @@
 
             <div class="col-6">
                 <div>
-                    <h3 id="clicks"> current clicks are 0 </h3><hr>
-                    <h3 id="upgrade1"> click +1 is 0 </h3><hr>
-                    <h3>click +50 is 0</h3><hr>
-                    <h3>idle rookie is 0</h3><hr>
-                    <h3>idle boss is 0</h3><hr>
+                    <h5 id="clicks"> current clicks are 0 </h5><hr>
+                    <h5 id="upgrade1"> click +1 is 0 </h5><hr>
+                    <h5 id="upgrade2">click +50 is 0</h5><hr>
+                    <h5>idle rookie is 0</h5><hr>
+                    <h5>idle boss is 0</h5><hr>
+                    <h5 id="click-tally">total click power is 1</h5><hr>
                 </div>
             </div>
         </div>
@@ -40,8 +41,8 @@
         <div class="col ">
             <button onclick="click1()" class="bg-warning rounded">CLICK +1</button>
             <p id="c1-price">cost: 50</p>
-            <button class="bg-warning rounded">CLICK +50</button>
-            <p>cost: 500</p>
+            <button onclick="click2()" class="bg-warning rounded">CLICK +50</button>
+            <p id="c2-price">cost: 500</p>
             <button class="bg-warning rounded">IDLE ROOKIE x 100</button>
             <p>cost: 2,500</p>
             <button class="bg-warning rounded">IDLE BOSS x 250</button>
