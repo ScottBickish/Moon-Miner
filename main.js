@@ -73,8 +73,7 @@ function click1(){
         currentClickCount -= upgrade1.price
         upgrade1.qty++
         upgrade1.price += upgrade1.price
-       
-        }
+       }
        update()
     }
 
