@@ -6,7 +6,7 @@ img{
 body{
     background-color: silver;
 }
-.rounded:hover{
+.effect:hover{
     color: cyan;
     border: 2px dotted pink;
 }

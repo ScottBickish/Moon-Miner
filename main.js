@@ -22,22 +22,60 @@ let upgrade4 = {
     multiplier: 250,
     qty: 0,
 }
+function evaluate(){
+ if(currentClickCount < upgrade1.price){
+            document.getElementById('test1').disabled = true;
+        }else if(currentClickCount >= upgrade1.price){ document.getElementById('test1').disabled = false;}
+        if(currentClickCount < upgrade2.price){
+            document.getElementById('test2').disabled = true;
+        }else if(currentClickCount >= upgrade2.price){ document.getElementById('test2').disabled = false;}
+        if(currentClickCount < upgrade3.price){
+            document.getElementById('test3').disabled = true;
+        }else if(currentClickCount >= upgrade3.price){ document.getElementById('test3').disabled = false;}
+        if(currentClickCount < upgrade4.price){
+            document.getElementById('test4').disabled = true;
+        }else if(currentClickCount >= upgrade4.price){ document.getElementById('test4').disabled = false;}
+        if(currentClickCount < upgrade1.price){
+            document.getElementById('test1').classList.remove('effect')
+        }else if(currentClickCount >= upgrade1.price){
+            document.getElementById('test1').classList.add('effect')
+        }
+        if(currentClickCount < upgrade2.price){
+            document.getElementById('test2').classList.remove('effect')
+        }else if(currentClickCount >= upgrade2.price){
+            document.getElementById('test2').classList.add('effect')
+        }
+        if(currentClickCount < upgrade3.price){
+            document.getElementById('test3').classList.remove('effect')
+        }else if(currentClickCount >= upgrade3.price){
+            document.getElementById('test3').classList.add('effect')
+        }
+        if(currentClickCount < upgrade4.price){
+            document.getElementById('test4').classList.remove('effect')
+        }else if(currentClickCount >= upgrade4.price){
+            document.getElementById('test4').classList.add('effect')
+        }
+}
+evaluate()
 
 
 function mine(){
     currentClickCount += totalmultiplier
     document.getElementById('clicks').innerText = `Current clicks are ${currentClickCount}`
-
+   evaluate()
+        
     }
 
 function click1(){
+    
     if(currentClickCount >= upgrade1.price){
        totalmultiplier += upgrade1.multiplier
         currentClickCount -= upgrade1.price
         upgrade1.qty++
         upgrade1.price += upgrade1.price
+       
         }
-    update()
+       update()
     }
 
 function update(){
@@ -45,6 +83,7 @@ function update(){
     document.getElementById('c1-price').innerText = `Cost: ${upgrade1.price}`
     document.getElementById('click-tally').innerText = `Total click power is ${totalmultiplier}`
     document.getElementById('clicks').innerText = `Current clicks are ${currentClickCount}`
+    evaluate()
 }
 
 function click2(){
@@ -62,6 +101,7 @@ function update2(){
     document.getElementById('c2-price').innerText = `Cost: ${upgrade2.price}`
     document.getElementById('click-tally').innerText = `Total click power is ${totalmultiplier}`
     document.getElementById('clicks').innerText = `Current clicks are ${currentClickCount}`
+    evaluate()
 }
 
 function click3(){
@@ -79,15 +119,14 @@ function click3(){
         
           }
           
-    
-        
-}
+    }
 function update3(){
     document.getElementById('upgrade3').innerText = `Idle rookie is ${upgrade3.qty}`
     document.getElementById('c3-price').innerText = `Cost: ${upgrade3.price}`
     document.getElementById('click-tally').innerText = `Total click power is ${totalmultiplier}`
     document.getElementById('clicks').innerText = `Current clicks are ${currentClickCount}`
     document.getElementById('idle-tally').innerText = `Total idle power is ${totalIdlePower}`
+    evaluate()
 }
 
 function click4(){
@@ -112,12 +151,17 @@ function update4(){
     document.getElementById('click-tally').innerText = `Total click power is ${totalmultiplier}`
     document.getElementById('clicks').innerText = `Current clicks are ${currentClickCount}`
     document.getElementById('idle-tally').innerText = `Total idle power is ${totalIdlePower}`
+    evaluate()
 }
 
 function easteregg(){
-currentClickCount += 98237
+currentClickCount += 100000
 updateunknown()
 }
 function updateunknown(){
     document.getElementById('clicks').innerText = `Current clicks are ${currentClickCount}`
+    evaluate()
 }
+
+
+
